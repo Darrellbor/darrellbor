@@ -1,5 +1,6 @@
 body {
   font-family: $font-family-base !important;
+  background-color: $brand-color;
   background: linear-gradient(
     -45deg,
     $brand-color,
@@ -11,7 +12,7 @@ body {
   animation: gradient 15s ease infinite;
 }
 
-.Darrellbor-App {
+.Darrellbor__App {
   background-image: url(../../assets/images/bg_image.png);
   height: 100%;
 }

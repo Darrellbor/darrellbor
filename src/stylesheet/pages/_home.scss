@@ -1,0 +1,172 @@
+.Home {
+  min-height: 700px;
+  margin: auto;
+  max-width: 1500px;
+
+  &__menu {
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-right: 20px;
+    text-align: right;
+
+    & svg {
+      width: 60px;
+      margin-right: 50px;
+      cursor: pointer;
+    }
+  }
+
+  &__intro {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    padding-top: 10px;
+
+    &__content {
+      color: $brand-color-alt;
+      margin: auto;
+
+      & h1 {
+        text-transform: uppercase;
+        font-size: 5rem;
+        width: 0;
+        margin-bottom: 50px;
+        font-weight: bold;
+      }
+
+      & ul {
+        list-style-type: none;
+        padding-left: 0;
+
+        & li {
+          margin-bottom: 10px;
+          font-size: 1.5rem;
+        }
+      }
+
+      & h3 {
+        margin-top: 40px;
+        font-weight: bold;
+
+        & a {
+          color: $brand-color-alt !important;
+          text-decoration: none !important;
+        }
+      }
+    }
+
+    &__image {
+      margin: auto;
+
+      & img {
+        max-width: 100%;
+        width: 500px;
+      }
+    }
+  }
+
+  &__about {
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+
+    &__item {
+      max-width: 600px;
+      padding: 30px;
+      color: $brand-color-alt;
+      display: flex;
+      justify-content: space-between;
+
+      &--first {
+        & .Home__about__item__circle {
+          width: 500px;
+        }
+      }
+
+      &--right {
+        margin: 50px 0;
+        margin-left: auto;
+      }
+
+      &__circle {
+        border-radius: 100%;
+        background-color: $brand-color;
+        background: linear-gradient(
+          -45deg,
+          #b4838d,
+          #ffb5a213,
+          #ffb5a221,
+          #b4838d
+        );
+        background-size: 400% 400%;
+        animation: gradient 15s ease infinite;
+        height: 60px;
+        width: 300px;
+        margin-right: 50px;
+        font-size: 5rem;
+      }
+
+      &__content {
+        line-height: 2rem;
+      }
+    }
+
+    & .Home__title {
+      text-align: end;
+    }
+  }
+
+  &__skills {
+    padding: 30px;
+    max-width: 1200px;
+    margin: auto;
+
+    &__inner {
+      background-color: $brand-color-alt;
+      border-radius: 20px;
+      min-height: 100px;
+    }
+  }
+
+  &__title {
+    font-size: 4rem;
+    color: $brand-color-alt;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: $breakpoint-bs-md) {
+  .Home {
+    &__menu {
+      & svg {
+        margin-right: 0px !important;
+      }
+    }
+
+    &__intro {
+      &__content {
+        & h1 {
+          font-size: 3rem !important;
+          width: auto !important;
+        }
+      }
+
+      &__image {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: $breakpoint-small-screens) {
+  .Home {
+    &__about {
+      &__item {
+        &__circle {
+          margin-right: 20px !important;
+          font-size: 3rem !important;
+        }
+      }
+    }
+  }
+}
