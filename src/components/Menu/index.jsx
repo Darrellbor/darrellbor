@@ -1,7 +1,6 @@
 //@flow
 import React from "react";
 import { Link } from "react-scroll";
-import Download from "downloadjs";
 
 import Github from "../Icons/Github";
 import Linkedin from "../Icons/Linkedin";
@@ -86,18 +85,13 @@ export const Menu = (props: menuProps) => {
             </div>
 
             <div className="Menu__body__item Menu__body__item--resume">
-              <Link
-                to="resume"
-                onClick={() =>
-                  Download(
-                    "https://idarrel.netlify.app/Darrel's_Resume.pdf",
-                    "Darrel Idiagbor's Resume.pdf",
-                    "application/pdf"
-                  )
-                }
+              <a
+                href="https://idarrel.netlify.app/Darrel's_Resume.pdf"
+                target="__blank"
+                rel="noopener noreferrer"
               >
-                Download My Resume
-              </Link>
+                My Resume
+              </a>
             </div>
 
             <div className="Menu__body__item Menu__body__item--connect">
