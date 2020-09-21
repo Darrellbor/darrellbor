@@ -51,12 +51,16 @@
 
     &__item {
       margin-bottom: 20px;
+      cursor: pointer;
 
       & a {
         text-decoration: none !important;
         color: $brand-color !important;
         font-size: 1.2rem;
-        font-weight: bold;
+      }
+
+      &--active {
+        font-weight: 900 !important;
       }
 
       &--home {

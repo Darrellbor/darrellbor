@@ -51,6 +51,7 @@
         & a {
           color: $brand-color-alt !important;
           text-decoration: none !important;
+          cursor: pointer;
         }
       }
     }
@@ -120,11 +121,199 @@
     padding: 30px;
     max-width: 1200px;
     margin: auto;
+    transition: all 0.85s ease-in;
 
     &__inner {
       background-color: $brand-color-alt;
       border-radius: 20px;
       min-height: 100px;
+      position: relative;
+    }
+
+    &__field {
+      padding: 40px;
+      margin-bottom: 20px;
+      text-align: center;
+
+      & svg {
+        width: 100px;
+      }
+    }
+
+    &__details {
+      background-color: #0000009c;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 1050;
+      position: absolute;
+      border-radius: 20px;
+      transition: all 0.85s ease-in;
+
+      &__content {
+        margin: 30px auto;
+        max-width: 500px;
+        height: 100%;
+        line-height: 2rem;
+        color: $brand-color-alt;
+      }
+    }
+  }
+
+  &__projects {
+    margin: 30px 0;
+    transition: all 0.85s ease-in;
+
+    & .Home__title {
+      max-width: 1200px;
+      margin: auto;
+      margin-bottom: 15px;
+      padding: 30px;
+    }
+
+    &__inner {
+      background: #c4c4c408;
+      box-shadow: inset 2px 4px 104px 9px #68646fab;
+      border-radius: 20px;
+      min-height: 100px;
+    }
+
+    &__display {
+      margin: 30px auto;
+      max-width: 1200px;
+      padding: 50px;
+
+      &__content {
+        color: $brand-color-alt;
+
+        & .col-md-6 {
+          &:first-of-type {
+            text-align: center;
+          }
+
+          &:last-of-type {
+            margin: auto;
+          }
+        }
+
+        & h2 {
+          font-weight: bold;
+          animation: menuBackdrop 1.5s 0s ease-in-out;
+        }
+
+        & img {
+          margin: 30px auto;
+          max-width: 100%;
+          animation: menuBackdrop 1.5s 0s ease-in-out;
+        }
+
+        & p {
+          animation: menuBackdrop 1.5s 0s ease-in-out;
+        }
+
+        & a {
+          color: $brand-color-alt !important;
+          font-weight: bold;
+          animation: menuBackdrop 1.5s 0s ease-in-out;
+        }
+      }
+    }
+
+    &__items {
+      display: flex;
+      border-top: 1px solid $brand-color-alt;
+      padding: 30px;
+      max-width: 100%;
+      overflow: auto;
+    }
+
+    &__item {
+      border-radius: 5px;
+      margin-right: 25px;
+
+      &--active {
+        border: 2px solid $brand-color-alt;
+      }
+
+      & img {
+        border-radius: 5px;
+        cursor: pointer;
+        max-width: 250px;
+      }
+    }
+  }
+
+  &__connect {
+    margin: 30px auto;
+    max-width: 1200px;
+    padding: 50px;
+    transition: all 0.85s ease-in;
+
+    & .Home__title {
+      margin-bottom: 15px;
+    }
+
+    &__inner {
+      background-color: $brand-color-green;
+      min-height: 100px;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__content {
+      color: $brand-color-alt;
+      padding: 30px;
+      margin: auto;
+
+      & h2 {
+        max-width: 10px;
+        display: block;
+        font-weight: bold;
+      }
+
+      & a {
+        color: $brand-color-alt !important;
+      }
+
+      &__divider {
+        background-color: $brand-color-alt;
+        min-height: 10px;
+        border-radius: 10px;
+        max-width: 100px;
+        margin-top: 60px;
+        margin-bottom: 30px;
+      }
+
+      &__text {
+        line-height: 1.8rem;
+        max-width: 500px;
+
+        & a {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    &__socials {
+      margin-top: 25px;
+
+      & svg {
+        width: 20px;
+        margin-right: 15px;
+        margin-bottom: 15px;
+
+        & path {
+          fill: #fff;
+        }
+      }
+    }
+
+    &__img {
+      & img {
+        max-width: 100%;
+        height: fit-content;
+      }
     }
   }
 
@@ -132,6 +321,17 @@
     font-size: 4rem;
     color: $brand-color-alt;
     font-weight: bold;
+  }
+
+  &__footer {
+    &__copy {
+      color: $brand-color-alt;
+      padding: 20px;
+      padding-left: 50px;
+      margin: auto;
+      margin-bottom: 40px;
+      max-width: 1200px;
+    }
   }
 }
 
@@ -158,6 +358,22 @@
   }
 }
 
+@media (max-width: $breakpoint-bs-sm) {
+  .Home {
+    &__connect {
+      padding: 0 !important;
+
+      & .Home__title {
+        padding: 30px;
+      }
+
+      &__img {
+        max-width: 10%;
+      }
+    }
+  }
+}
+
 @media (max-width: $breakpoint-small-screens) {
   .Home {
     &__about {
@@ -167,6 +383,10 @@
           font-size: 3rem !important;
         }
       }
+    }
+
+    &__title {
+      font-size: 3rem !important;
     }
   }
 }

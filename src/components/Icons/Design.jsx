@@ -1,8 +1,19 @@
+//@flow
 import React from "react";
 
-export const Design = () => {
+type DesignProps = {
+  onMouseOver?: Function,
+};
+
+export const Design = (props: DesignProps) => {
   return (
-    <svg width="174" height="175" viewBox="0 0 174 175" fill="none">
+    <svg
+      width="174"
+      height="175"
+      viewBox="0 0 174 175"
+      fill="none"
+      onMouseOver={props.onMouseOver}
+    >
       <path
         d="M72.055 46.9048C79.6699 46.9048 85.8653 40.7097 85.8653 33.0948C85.8653 25.4798 79.6699 19.2844 72.055 19.2844C64.4401 19.2844 58.245 25.4798 58.245 33.0948C58.245 40.7097 64.4401 46.9048 72.055 46.9048ZM72.055 24.4114C76.8432 24.4114 80.7383 28.3065 80.7383 33.0948C80.7383 37.8827 76.8432 41.7778 72.055 41.7778C67.2671 41.7778 63.3719 37.8827 63.3719 33.0948C63.3719 28.3069 67.2671 24.4114 72.055 24.4114Z"
         fill="#535058"

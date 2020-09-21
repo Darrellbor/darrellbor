@@ -1,6 +1,7 @@
 //@flow
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "react-scroll";
+import Download from "downloadjs";
 
 import Github from "../Icons/Github";
 import Linkedin from "../Icons/Linkedin";
@@ -33,27 +34,83 @@ export const Menu = (props: menuProps) => {
 
           <div className="Menu__body__items">
             <div className="Menu__body__item Menu__body__item--home">
-              <Link to="top">Home</Link>
+              <Link
+                to="home"
+                activeClass="Menu__body__item--active"
+                spy={true}
+                smooth={true}
+                duration={800}
+                onClick={props.onClose}
+              >
+                Home
+              </Link>
             </div>
 
             <div className="Menu__body__item Menu__body__item--mee">
-              <Link to="about">About Mee...</Link>
+              <Link
+                to="about"
+                activeClass="Menu__body__item--active"
+                spy={true}
+                smooth={true}
+                duration={800}
+                onClick={props.onClose}
+              >
+                About Mee...
+              </Link>
             </div>
 
             <div className="Menu__body__item Menu__body__item--skills">
-              <Link to="skills">Skill Set</Link>
+              <Link
+                to="skills"
+                activeClass="Menu__body__item--active"
+                spy={true}
+                smooth={true}
+                duration={800}
+                onClick={props.onClose}
+              >
+                Skill Set
+              </Link>
             </div>
 
             <div className="Menu__body__item Menu__body__item--projects">
-              <Link to="projects">Highlighted Projects</Link>
+              <Link
+                to="projects"
+                activeClass="Menu__body__item--active"
+                spy={true}
+                smooth={true}
+                duration={800}
+                onClick={props.onClose}
+              >
+                Highlighted Projects
+              </Link>
             </div>
 
             <div className="Menu__body__item Menu__body__item--resume">
-              <Link to="resume">Download My Resume</Link>
+              <Link
+                to="resume"
+                onClick={() =>
+                  Download(
+                    "https://idarrel.netlify.app/Darrel's_Resume.pdf",
+                    "Darrel Idiagbor's Resume.pdf",
+                    "application/pdf"
+                  )
+                }
+              >
+                Download My Resume
+              </Link>
             </div>
 
             <div className="Menu__body__item Menu__body__item--connect">
-              <Link to="connect">Let's Connect...</Link>
+              <Link
+                to="connect"
+                activeClass="Menu__body__item--active"
+                spy={true}
+                smooth={true}
+                duration={800}
+                onClick={props.onClose}
+              >
+                Let's Connect...
+              </Link>
             </div>
           </div>
 
