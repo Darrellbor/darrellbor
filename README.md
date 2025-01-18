@@ -1,7 +1,7 @@
 <h1 align="center">Hi 👋, I'm Darrel Idiagbor</h1>
 <h3 align="center">A passionate cloud enthusiast and full stack engineer</h3>
 
-- 🔭 I’m currently working on co-creating resilient organizations with the help of data and tech **@futurice**
+- 🔭 I’m currently working on enabling electric charging at **@vw_charging**
 
 - 🌱 I'm currently learning **cloud concepts with aws and trying out new languages and frameworks**
 
