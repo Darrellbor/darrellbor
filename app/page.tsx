@@ -9,7 +9,7 @@ const SELOIRA_RULES = [
   ["Data", "Postgres blocks double bookings with an exclusion constraint, so the rule can't be bypassed by a bug."],
   ["Payments", "Money lives in an append-only ledger in minor units, with idempotent Paystack and Flutterwave webhooks."],
   ["Frontend", "One design system and component library shared by the dashboard, the storefront and the website."],
-  ["Ops", "CI/CD on GitHub Actions, background workers on BullMQ, monitoring with PostHog and Checkly."],
+  ["Ops", "CI/CD on GitHub Actions, background workers on BullMQ, product analytics with PostHog."],
 ];
 
 const SELOIRA_STACK = ["TypeScript", "NestJS", "PostgreSQL", "Prisma", "Redis", "Next.js", "React", "Turborepo", "Fly.io", "Playwright"];
@@ -76,7 +76,7 @@ export default function Home() {
               <a className="btn" href="#contact" data-inspect="Secondary button">Get in touch</a>
             </div>
             <p className="hint">
-              Curious how it&apos;s built? Turn on <b>Inspect</b> and hover anything.
+              Curious how it&apos;s built? Turn on <b>Inspect</b> and <span className="on-hover">hover</span><span className="on-touch">tap</span> anything.
             </p>
           </div>
           <LayerStack />
@@ -99,7 +99,7 @@ export default function Home() {
                   A business operating system for service businesses: bookings, payments, clients and messages. It turns appointments that used to live in Instagram and WhatsApp DMs into paid, organised bookings.
                 </p>
                 <p className="muted">
-                  I did all of it on my own, from finding the problem and setting the pricing to the architecture, the code and the launch, taking it from waitlist to a live product with three paid plans.
+                  I built it from the ground up, from finding the problem and setting the pricing to the architecture, the code and the launch, and took it from a waitlist to a live product with paid plans.
                 </p>
                 <ul className="rules">
                   {SELOIRA_RULES.map(([k, v]) => (

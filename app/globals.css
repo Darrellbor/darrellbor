@@ -95,6 +95,8 @@ h1, h2, h3 { margin: 0; text-wrap: balance; }
 .btn.primary:hover { filter: brightness(1.08); }
 .hint { font-family: var(--mono); font-size: 12.5px; color: var(--muted); margin: 0; }
 .hint b { color: var(--redline); font-weight: 500; }
+.on-touch { display: none; }
+@media (hover: none) { .on-hover { display: none; } .on-touch { display: inline; } }
 
 /* 3D layer stack */
 .stage-wrap { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px; min-width: 0; }

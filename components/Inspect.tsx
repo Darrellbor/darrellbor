@@ -24,16 +24,25 @@ export function Inspect() {
     if (!on) return;
     document.body.classList.add("inspecting");
 
+    let current: HTMLElement | null = null;
+
     const hide = () => {
+      current = null;
       if (box.current) box.current.hidden = true;
       if (tip.current) tip.current.hidden = true;
     };
 
-    const onMove = (e: PointerEvent) => {
+    // Outside the bar, so the Inspect toggle itself stays clickable.
+    const targetOf = (e: Event) => {
+      const el = (e.target as Element).closest<HTMLElement>(TARGETS);
+      return el && !el.closest(".bar") ? el : null;
+    };
+
+    const show = (el: HTMLElement | null) => {
       const b = box.current;
       const t = tip.current;
-      const el = (e.target as Element).closest<HTMLElement>(TARGETS);
-      if (!b || !t || !el || el.closest(".bar")) return hide();
+      if (!b || !t || !el) return hide();
+      current = el;
 
       const r = el.getBoundingClientRect();
       const cs = getComputedStyle(el);
@@ -54,16 +63,26 @@ export function Inspect() {
       Object.assign(t.style, { top: `${top}px`, left: `${left}px` });
     };
 
+    // Mouse hovers; touch has no hover, so a tap selects instead.
+    const onMove = (e: PointerEvent) => e.pointerType === "mouse" && show(targetOf(e));
+    const onDown = (e: PointerEvent) => e.pointerType !== "mouse" && show(targetOf(e));
+    // While inspecting, a tap or click on a link or button inspects it instead of following it.
+    const onClick = (e: MouseEvent) => targetOf(e) && e.preventDefault();
+    const onScroll = () => current && show(current);
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOn(false);
 
     document.addEventListener("pointermove", onMove);
+    document.addEventListener("pointerdown", onDown);
+    document.addEventListener("click", onClick, true);
     document.addEventListener("keydown", onKey);
-    addEventListener("scroll", hide, { passive: true });
+    addEventListener("scroll", onScroll, { passive: true });
     return () => {
       document.body.classList.remove("inspecting");
       document.removeEventListener("pointermove", onMove);
+      document.removeEventListener("pointerdown", onDown);
+      document.removeEventListener("click", onClick, true);
       document.removeEventListener("keydown", onKey);
-      removeEventListener("scroll", hide);
+      removeEventListener("scroll", onScroll);
     };
   }, [on]);
 
