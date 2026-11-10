@@ -183,17 +183,29 @@ export default function Home() {
                 <p className="foot">TypeScript · NestJS · GCP · Terraform</p>
               </article>
               <article className="card">
-                <p className="label">Side project · AI</p>
+                <p className="label">Side project · 2025 → now</p>
                 <h3>Senomy</h3>
-                <div className="chat" aria-label="Illustrative conversation">
+                <div className="chat" aria-label="Then an AI companion conversation, now a daily rhythm checklist">
+                  <span className="era">v1 · AI app</span>
                   <div className="bubble flow">Long day? Tell me the part that&apos;s still on your mind.</div>
                   <div className="bubble you">The deadline, mostly.</div>
                   <div className="bubble flow">Okay. What would &ldquo;good enough&rdquo; look like by Friday?</div>
+                  <span className="era">Now · community</span>
+                  <ul className="rhythm">
+                    <li className="done">Three good things</li>
+                    <li>Step outside</li>
+                  </ul>
                 </div>
                 <p>
-                  A wellness app where an AI companion talks people through how they&apos;re feeling and writes them personal daily messages. I designed its voice and the context it sees, so it feels like a friend instead of a form.
+                  First an AI wellness companion I launched to 10–20 early users, designing its voice and context. Now a research-backed community built on seven small daily acts for gratitude, calm and connection.
                 </p>
-                <p className="foot">Launched to 10–20 early users · currently offline · conversation is illustrative</p>
+                <p className="foot">
+                  Founding circle starts early 2027 ·{" "}
+                  <a href="https://senomy.com" {...external}>
+                    senomy.com
+                  </a>{" "}
+                  · conversation is illustrative
+                </p>
               </article>
               <article className="card">
                 <p className="label">Moralis · 2022</p>
